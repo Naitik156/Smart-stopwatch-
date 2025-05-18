@@ -1,0 +1,173 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aesthetic font */
+    background: linear-gradient to right, #e0f7fa, #b2ebf2; /* Aesthetic gradient background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00796b; /* A nice teal color */
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+main {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 900px; /* Limit content width on large screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between sections */
+}
+
+.stopwatch-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.stopwatch-display {
+    font-size: 4em;
+    font-weight: bold;
+    color: #004d40; /* Darker teal */
+    letter-spacing: 2px;
+    min-width: 250px; /* Prevent display jump */
+}
+
+.status-indicator {
+    font-size: 1.2em;
+    font-weight: semi-bold;
+    color: #004d40;
+    min-height: 1.5em; /* Reserve space */
+}
+
+/* Status colors */
+.status-indicator.loading { color: #ff9800; /* Orange */ }
+.status-indicator.ready { color: #4caf50; /* Green */ }
+.status-indicator.studying { color: #4caf50; /* Green */ }
+.status-indicator.distracted { color: #f44336; /* Red */ }
+.status-indicator.paused { color: #ff9800; /* Orange */ } /* Could be used for manual pause if added */
+.status-indicator.camera-error { color: #f44336; /* Red */ }
+
+
+.camera-area {
+    position: relative; /* Needed for canvas overlay */
+    width: 100%;
+    max-width: 400px; /* Limit camera preview size */
+    margin: 0 auto; /* Center the camera area */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* Hide parts of video/canvas outside border-radius */
+    background-color: #eee; /* Placeholder background */
+}
+
+#videoInput, #overlayCanvas {
+    display: block; /* Remove extra space below elements */
+    width: 100%; /* Fill the container width */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Overlay canvas on video */
+    top: 0;
+    left: 0;
+}
+
+#overlayCanvas {
+    z-index: 10; /* Ensure canvas is above video */
+    /* Make canvas transparent for detections if video is visible */
+    /* Or hide if video is hidden */
+}
+
+/* Optionally hide video and canvas if you want the camera to run purely in background */
+/*
+.camera-area, #videoInput, #overlayCanvas {
+    display: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+*/
+
+.ad-space {
+    width: 100%;
+    min-height: 100px; /* Reserve minimum space for ads */
+    background-color: #eceff1; /* Light grey background for ad space */
+    border: 1px dashed #b0bec5; /* Dashed border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    color: #546e7a;
+    text-align: center;
+    margin: 10px 0; /* Space around ad spaces */
+    border-radius: 8px;
+    overflow: hidden; /* Handle ad overflow */
+}
+
+.ad-space ins {
+     display: block; /* Ensure ins element takes space */
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #546e7a;
+    font-size: 0.9em;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .stopwatch-display {
+        font-size: 3em;
+    }
+
+    .status-indicator {
+        font-size: 1em;
+    }
+
+    .camera-area {
+         max-width: 300px; /* Smaller camera preview on small screens */
+    }
+
+    .ad-space {
+        min-height: 80px;
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Study Stopwatch - Stay Focused</title>
+    
+    <!-- Basic SEO Meta Tags -->
+    <meta name="description" content="An aesthetic stopwatch that uses your camera to detect if you're studying and automatically pauses when you're distracted.">
+    <meta name="keywords" content="study, stopwatch, focus, camera, face detection, productivity, timer, web app">
+    
+    <!-- Open Graph / Social Media Tags (Optional, but good for sharing) -->
+    <meta property="og:title" content="Study Stopwatch - Stay Focused">
+    <meta property="og:description" content="An aesthetic stopwatch that uses your camera to detect if you're studying and automatically pauses when you're distracted.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="[Link to a preview image]"> -->
+    <!-- <meta property="og:url" content="[Your Website URL]"> -->
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Focus Flow Stopwatch</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="stopwatch-area">
+                <div id="stopwatch-display" class="stopwatch-display">00:00:00</div>
+                <div id="status-indicator" class="status-indicator">Loading models...</div>
+            </div>
+
+            <!-- Advertisement Space 1 -->
+            <div class="ad-space ad-space-top">
+                <!-- Your AdSense Ad Unit Code Here -->
+                <!-- Example: -->
+                <!-- <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="YOUR_ADSENSE_CLIENT_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID_1"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script> -->
+                <p>Advertisement Space</p>
+            </div>
+            
+            <div class="camera-area">
+                 <!-- Video element for camera feed (can be hidden or styled minimally) -->
+                <video id="videoInput" autoplay muted playsinline></video>
+                <!-- Canvas for drawing detections (can be hidden) -->
+                <canvas id="overlayCanvas"></canvas>
+            </div>
+
+             <!-- Advertisement Space 2 -->
+            <div class="ad-space ad-space-bottom">
+                <!-- Your AdSense Ad Unit Code Here -->
+                 <!-- Example: -->
+                <!-- <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="YOUR_ADSENSE_CLIENT_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID_2"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script> -->
+                 <p>Advertisement Space</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Focus Flow</p>
+    </footer>
+
+    <!-- Include face-api.js library -->
+    <!-- Make sure face-api.min.js and the models folder are in the correct path -->
+    <script src="face-api.min.js"></script>
+
+    <!-- Include your main script -->
+    <script src="script.js"></script>
+
+    <!-- Google AdSense Script - Place this at the end of the body -->
+    <!-- Replace 'YOUR_ADSENSE_CLIENT_ID' with your actual AdSense client ID -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_CLIENT_ID" crossorigin="anonymous"></script> -->
+    <!-- Uncomment the line above and replace the client ID to enable AdSense -->
+
+</body>
+</html>
